@@ -1,0 +1,41 @@
+<div class="container">
+    <hr>
+
+    <div class="marca">
+        <label for="">Organización</label>
+        <select name="org" class="custom-select" [(ngModel)]="marca" (change)="cambioMarca()">
+            <option [value]="marca.Organizacion" *ngFor="let marca of marcas">{{marca.Organizacion}}</option>
+        </select>
+    </div>
+    
+    <nav>
+        <ul>
+            <!-- Datos maestros -->
+            <hr>
+            <li>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="dns"></mat-icon>
+                Datos maestros
+            </li>
+            <li class="alink"><a routerLink="./jerarquias_aptos" routerLinkActive="active">Jerarquias aptos</a></li>
+            <li class="alink"><a routerLink="./jerarquias_axo" routerLinkActive="active">Jerarquias Axo</a></li>
+            <li class="alink"><a routerLink="./categoria_demanda" routerLinkActive="active">Categoria Demanda</a></li>
+            <!-- Relaciones -->
+            <hr>
+            <li>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="display_settings"></mat-icon>
+                Relaciones
+            </li>
+            <li class="alink"><a routerLink="./organizacion" routerLinkActive="active">Organización</a></li>
+            <li class="alink"><a routerLink="./canales" routerLinkActive="active">Canales</a></li>
+            <li class="alink"><a routerLink="./centros" routerLinkActive="active">Centros</a></li>
+            <li class="alink"><a routerLink="./generos" routerLinkActive="active">Generos</a></li>
+            <hr>
+        </ul>
+    </nav>
+
+    <div class="logout" (click)="logout()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+        Salir
+    </div>
+
+</div>

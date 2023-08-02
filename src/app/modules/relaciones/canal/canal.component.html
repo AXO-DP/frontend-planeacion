@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>Canales</h1>
+    <div class="card" *ngIf="canales.length > 0" [@fadeInOut]> 
+        <table>
+            <thead>
+              <tr>
+                <th>ID Genero</th>
+                <th>Genero</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let canal of canales;">
+                <td>{{canal.BD_Canal}}</td>
+                <td>{{canal.BD_Canal_L}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>Jerarquias Aptos</h1>
+    <div class="card" *ngIf="jerarquias.length > 0" [@fadeInOut]> 
+        <div class="filtro">
+            <label for="">Jerarquia | Nivel 1</label>
+            <select name="canal" id="" [(ngModel)]="filtro_n1" class="custom-select" (change)="filtrado_bu()">
+                <option value="todas">Todas los opciones</option>
+                <option [value]="n1.N1_Jerarquia" *ngFor="let n1 of n1_jerarquias">{{n1.N1_Jerarquia_L}}</option>
+            </select>
+        </div>
+        <hr>
+        <table>
+            <thead>
+              <tr>
+                <!-- Division -->
+                <!-- <th>Division</th> -->
+                <!-- <th>Division Label</th> -->
+                <!-- Departamento -->
+                <!-- <th>Departamento</th> -->
+                <!-- <th>Departamento Label</th> -->
+                <!-- Clase -->
+                <!-- <th>Clase</th> -->
+                <!-- <th>Clase Label</th> -->
+                <!-- Jerarquia -->
+                <th class="jerarquia">Jerarquia</th>
+                <th class="gparticulo">Grupo Articulo</th>
+                <th class="jerarquia_l">Jerarquia Label</th>
+                <!-- Categoria Demanda  -->
+                <!-- <th>Categoria Demanda</th> -->
+                <!-- Jerarquia AXO -->
+                <th class="n1">Jerarquia AXO N1</th>
+                <th class="n2">Jerarquia AXO N2</th>
+
+                <!-- Guardar -->
+                <th class="guardar">Guardar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let jerarquia of jerarquias_f; let i = index">
+                <!-- Division -->
+                <!-- <td>{{jerarquia.Mdm_Id_Division}}</td> -->
+                <!-- <td>{{jerarquia.Mdm_Division_L}}</td> -->
+                <!-- Departamento  -->
+                <!-- <td>{{jerarquia.Mdm_Id_Departamento}}</td> -->
+                <!-- <td>{{jerarquia.Mdm_Departamento_L}}</td> -->
+                <!-- Clase  -->
+                <!-- <td>{{jerarquia.Mdm_Id_Clase}}</td> -->
+                <!-- <td>{{jerarquia.Mdm_Clase_L}}</td> -->
+                <!-- Jerarquia  -->
+                <td class="jerarquia">{{jerarquia.Mdm_Jerarquia}}</td>
+                <td class="gparticulo">{{jerarquia.Mdm_Grupo_Articulo}}</td>
+                <td class="jerarquia_l">{{jerarquia.Mdm_Jerarquia_L}}</td>
+                <!-- Categoria Demanda -->
+                <!-- <td>
+                  <select name="categoria_demanda" [(ngModel)]="jerarquia.BD_Categoria_Demanda" class="custom-select" (change)="CD_Seleccionado(i)">
+                    <option [value]="cd.BD_Categoria_Demanda" *ngFor="let cd of categoria_demanda">{{cd.Categoria_Demanda_L}}</option>
+                  </select>
+                </td> -->
+                <!-- Jerarquia Axo -->
+                <td>
+                  <select name="n1_jerarquia" id="" [(ngModel)]="jerarquia.N1_Jerarquia" class="custom-select" (change)="N1_Seleccionado(i)">
+                    <option [value]="n1.N1_Jerarquia" *ngFor="let n1 of n1_jerarquias">{{n1.N1_Jerarquia_L}}</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="n2_jerarquia" id="" [(ngModel)]="jerarquia.N2_Jerarquia" class="custom-select" (change)="N2_Seleccionado(i)">
+                    <option [value]="n2.N2_Jerarquia" *ngFor="let n2 of jerarquia.N2_jerarquias_filtradas">{{n2.N2_Jerarquia_L}}</option>
+                  </select>
+                </td>
+                <!-- Guardar -->
+                <td class="guardar">
+                  <button [disabled]="!jerarquia.Status" class="primary" (click)="Guardar(i)"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="save"></mat-icon></button>
+                </td>
+
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+html, body { height: 100%;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+.custom-select {
+  background-color: #f2f2f2;
+  border: 2px solid #ccc;
+  padding: 5px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  text-overflow: ellipsis;
+}
+
+/* Estilo del ícono (puedes utilizar una fuente de iconos o una imagen) */
+.custom-select::after {
+  content: "\25BC";
+  font-size: 16px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Estilo del hover */
+.custom-select:hover {
+  background-color: #F5F5F5;
+  border-color: #999;
+}
+
+/* Estilo del focus */
+.custom-select:focus {
+  outline: none;
+  border-color: #0D47A1;
+}
+
+
+/* Estilo de la opción seleccionada */
+.custom-select option:checked {
+  background-color: #0D47A1;
+  color: #fff;
+}
+
+
+
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Cambiar el color del borde cuando el input está enfocado */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color:rgba(8,45,102,1)
+}
+
+button {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para el botón primario */
+button.primary {
+  background-color:rgba(8,45,102,1);
+  color:white;
+}
+
+button.primary:disabled{
+  background-color: rgba(176, 185, 197, 0.867);
+}
+
+/* Estilo para el botón secundario */
+button.secondary {
+  background-color: #ccc;
+}
+
+/* Cambiar el color del botón cuando está en hover (puntero encima) */
+button:hover {
+  background-color: rgb(7, 33, 73);
+}
+
+
+
+
+.ajs-error{
+  color: white !important;
+  
+  box-shadow: -1px 23px 51px -3px rgba(0,0,0,1) !important;
+  -webkit-box-shadow: -1px 23px 51px -3px rgba(0,0,0,1) !important;
+  -moz-box-shadow: -1px 23px 51px -3px rgba(0,0,0,1) !important;
+  width: 300px !important;
+  left: -300px;
+  bottom: 15px;
+}

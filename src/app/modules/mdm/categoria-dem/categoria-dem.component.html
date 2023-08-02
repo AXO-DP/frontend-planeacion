@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>Categoria Demanda</h1>
+    <div class="card" *ngIf="categorias_f.length > 0" [@fadeInOut]> 
+        <!-- <div class="filtro">
+            <p>Jerarquia | Nivel 1</p>
+            <select name="canal" id="" [(ngModel)]="n1_jerarquia" class="custom-select" (change)="filtrado_bu()">
+                <option value="todas">Todas los opciones</option>
+                <option [value]="n1.N1_Jerarquia" *ngFor="let n1 of n1_jerarquias">{{n1.N1_Jerarquia_L}}</option>
+            </select>
+        </div> -->
+        <hr>
+        <table>
+            <thead>
+              <tr>
+                <th>Categoria Demanda</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let categoria of categorias_f; let i = index">
+                <td>{{categoria.Categoria_Demanda_L}}</td>
+                <!-- <td>{{jerarquia.N1_Jerarquia_L}}</td>
+                <td>{{jerarquia.N2_Jerarquia_L}}</td> -->
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

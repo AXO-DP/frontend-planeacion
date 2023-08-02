@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>Generos</h1>
+    <div class="card" *ngIf="generos.length" [@fadeInOut]> 
+        <table>
+            <thead>
+              <tr>
+                <th>ID Genero</th>
+                <th>Genero</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let genero of generos">
+                <td>{{genero.BD_Genero}}</td>
+                <td>{{genero.BD_Genero_L}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

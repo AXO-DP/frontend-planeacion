@@ -1,0 +1,36 @@
+<div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>Centros</h1>
+    <div class="filtros">
+
+    </div>
+    <div class="card" *ngIf="centros.length > 0" [@fadeInOut]> 
+        <div class="filtro">
+            <p>Canal</p>
+            <select name="canal" id="" [(ngModel)]="canal_seleccionado" class="custom-select" (change)="filtrado_canal()">
+                <option value="todos">Todos los canales</option>
+                <option [value]="canal.BD_CANAL" *ngFor="let canal of canales">{{canal.BD_CANAL}}</option>
+            </select>
+        </div>
+        <hr>
+        <table>
+            <thead>
+              <tr>
+                <th>Centro</th>
+                <th>Nombre del centro</th>
+                <th>Centro Aptos</th>
+                <th>Centro Beneficio</th>
+                <th>Canal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let centro of centros_f; let i = index">
+                <td><input type="text" [(ngModel)]="centro.Mdm_Centro" class="custom-input" disabled/></td>
+                <td><input type="text" [(ngModel)]="centro.Mdm_Centro_L" class="custom-input" /></td>
+                <td><input type="text" [(ngModel)]="centro.Mdm_Centro_Aptos" class="custom-input" disabled/></td>
+                <td><input type="text" [(ngModel)]="centro.Mdm_Centro_Beneficio" class="custom-input" disabled/></td>
+                <td><input type="text" [(ngModel)]="centro.BD_Canal" class="custom-input" disabled/></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

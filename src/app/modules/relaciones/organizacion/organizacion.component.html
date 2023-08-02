@@ -1,0 +1,59 @@
+<div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>Organización</h1>
+    <div class="card" *ngIf="marcas.length > 0" [@fadeInOut]> 
+        <div class="filtro">
+            <p>BU</p>
+            <select name="canal" id="" [(ngModel)]="bu_seleccionada" class="custom-select" (change)="filtrado_bu()">
+                <option value="todas">Todas los opciones</option>
+                <option [value]="bu" *ngFor="let bu of bu">{{bu}}</option>
+            </select>
+        </div>
+        <hr>
+        <table>
+            <thead>
+              <tr>
+                <th>Organización</th>
+                <th>Nombre de la organizacion</th>
+                <th>BU</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let marca of marcas_f; let i = index">
+                <td>{{marca.BD_Organizacion}}</td>
+                <td>{{marca.BD_Organizacion_L}}</td>
+                <td>{{marca.BD_BU}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>Organización</h1>
+    <div class="card" *ngIf="marcas.length > 0">
+        <p class="card-title">BU2</p>
+        <div *ngFor="let marca of bu2_marcas" class="marca">
+            <p>{{marca.BD_Organizacion}} - {{marca.BD_Organizacion_L}}</p>
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="hola()"></mat-icon>
+        </div>
+        <hr>
+        <p class="card-title">BU3</p>
+        <div *ngFor="let marca of bu3_marcas" class="marca">
+            <p>{{marca.BD_Organizacion}} - {{marca.BD_Organizacion_L}}</p>
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="hola()"></mat-icon>
+        </div>
+        <hr>
+        <p class="card-title">BU4</p>
+        <div *ngFor="let marca of bu4_marcas" class="marca">
+            <p>{{marca.BD_Organizacion}} - {{marca.BD_Organizacion_L}}</p>
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="hola()"></mat-icon>
+        </div>
+        <hr>
+        <p class="card-title">BU5</p>
+        <div *ngFor="let marca of bu5_marcas" class="marca">
+            <p>{{marca.BD_Organizacion}} - {{marca.BD_Organizacion_L}}</p>
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="hola()"></mat-icon>
+        </div>
+        <hr>
+    </div>
+</div> -->
