@@ -10,6 +10,7 @@ import { CentroComponent } from './modules/relaciones/centro/centro.component';
 import { JerarquiasAptosComponent } from './modules/mdm/jerarquias-aptos/jerarquias-aptos.component';
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './system/inicio/inicio.component';
+import { MaterialesComponent } from './modules/materiales/materiales.component';
 
 const routes: Routes = [
   {path: "login",  component:LoginComponent},
@@ -20,15 +21,16 @@ const routes: Routes = [
     {path: "generos", component: GeneroComponent},
     {path: "jerarquias_axo", component: JerarquiasAxoComponent},
     {path: "jerarquias_aptos", component: JerarquiasAptosComponent},
+    {path: "materiales", component: MaterialesComponent},
     {path: "categoria_demanda", component: CategoriaDemComponent},
   ]}, 
 
   // {path:"organizacion", component: OrganizacionComponent},
-  {path: "**", component:NotfoundComponent},
+  {path: "**", component: LoginComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

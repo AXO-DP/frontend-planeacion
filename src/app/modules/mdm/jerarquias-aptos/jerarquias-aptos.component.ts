@@ -1,6 +1,11 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component } from '@angular/core';
 import { BackendService } from 'src/app/backend/backend.service';
+import Swal from 'sweetalert2';
+
+
+declare let alertify: any;
+
 
 @Component({
   selector: 'app-jerarquias-aptos',
@@ -23,7 +28,10 @@ import { BackendService } from 'src/app/backend/backend.service';
 export class JerarquiasAptosComponent {
 
   constructor(public api: BackendService){
-    this.api.jerarquias_aptos().subscribe((data: any) => {
+
+    const marca = localStorage.getItem("marca_seleccionada")
+
+    this.api.jerarquias_aptos(marca).subscribe((data: any) => {
       const resp = data
       console.log(resp);
       
@@ -81,26 +89,35 @@ export class JerarquiasAptosComponent {
   }
 
   Guardar(i: any){
-    const jer_guardar = this.jerarquias_f[i]
-    console.log(jer_guardar);
-    
-    alert("Guardando")
-    this.jerarquias_f[i].Status = 0
-
-    this.api.jerarquia_aptos_cambios(jer_guardar).subscribe((data: any) => {
-      console.log(data);
+    Swal.fire({
+      allowOutsideClick: false,
+      icon: "info",
+      text: "Cargando"
     })
+    Swal.showLoading();
+
+    setTimeout(()=>{
+      const jer_guardar = this.jerarquias_f[i]
+      this.api.jerarquia_aptos_cambios(jer_guardar).subscribe((data: any) => {
+        const respuesta = data
+        console.log(respuesta)
+
+        if(data){
+          alertify.success("Cambio realizado")
+          this.jerarquias_f[i].Status = false
+        }else{
+          alertify.error("Usuario o contraseña incorrecto.");
+        }
+      })
+      Swal.close(); 
+    }, 300) 
+    
   }
-
-
 
   filtrado_bu(){
-    // console.log(this.n1_jerarquia);
-    
-    // if(this.n1_jerarquia == "todas"){
-    //   this.jerarquias_f = this.jerarquias
-    // }else{
-    //   this.jerarquias_f = this.jerarquias.filter((marca: any) => marca.N1_Jerarquia == this.n1_jerarquia)
-    // }
+
   }
+
+
+  
 }

@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { MdmModule } from './modules/mdm/mdm.module';
 import { RelacionesModule } from './modules/relaciones/relaciones.module';
 import { InicioComponent } from './system/inicio/inicio.component';
+import { MaterialesComponent } from './modules/materiales/materiales.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { InicioComponent } from './system/inicio/inicio.component';
     NotfoundComponent,
     LoginComponent,
     InicioComponent,
+    MaterialesComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
     <h1 class="titulo_1" [@fadeInOut]>Jerarquias Axo</h1>
     <div class="card" *ngIf="jerarquias.length > 0" [@fadeInOut]> 
         <div class="filtro">
-            <p>Jerarquia | Nivel 1</p>
+            <label for="">Jerarquia | Nivel 1</label>
             <select name="canal" id="" [(ngModel)]="n1_jerarquia" class="custom-select" (change)="filtrado_bu()">
                 <option value="todas">Todas los opciones</option>
                 <option [value]="n1.N1_Jerarquia" *ngFor="let n1 of n1_jerarquias">{{n1.N1_Jerarquia_L}}</option>

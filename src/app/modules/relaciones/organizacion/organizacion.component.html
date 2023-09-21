@@ -2,7 +2,7 @@
     <h1 class="titulo_1" [@fadeInOut]>Organización</h1>
     <div class="card" *ngIf="marcas.length > 0" [@fadeInOut]> 
         <div class="filtro">
-            <p>BU</p>
+            <label for="">BU</label>
             <select name="canal" id="" [(ngModel)]="bu_seleccionada" class="custom-select" (change)="filtrado_bu()">
                 <option value="todas">Todas los opciones</option>
                 <option [value]="bu" *ngFor="let bu of bu">{{bu}}</option>

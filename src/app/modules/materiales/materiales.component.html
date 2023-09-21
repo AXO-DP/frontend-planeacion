@@ -1,0 +1,67 @@
+<div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>Materiales</h1>
+    <div class="card" *ngIf="materiales.length > 0" [@fadeInOut]> 
+        <!-- <div class="filtro">
+            <label for="">Jerarquia | Nivel 1</label>
+            <select name="canal" id="" [(ngModel)]="filtro_n1" class="custom-select" (change)="filtrado_bu()">
+                <option value="todas">Todas los opciones</option>
+                <option [value]="n1.N1_Jerarquia" *ngFor="let n1 of n1_jerarquias">{{n1.N1_Jerarquia_L}}</option>
+            </select>
+        </div> -->
+        <!-- <div class="filtros">
+          <div class="d_tipo_maet">
+            <label for="">Tipo material</label>
+            <select name="tp" id="" [(ngModel)]="f_tipo_mat" class="custom-select" (change)="filtrado()">
+                <option value="todas">Todas los opciones</option>
+                <option [value]="tp.Mdm_Tipo_Material" *ngFor="let tp of tipo_mat">{{tp.Mdm_Tipo_Material}}</option>
+            </select>
+          </div>
+
+        </div> -->
+        <hr>
+        <!-- <div>
+          50 materiales filtrados de {{materiales.length | number}} 
+        </div> -->
+        <table>
+            <thead>
+              <tr>
+                <th class="org">Org</th>
+                <th class="tipo_mat">Tipo</th>
+                <th class="material">Material</th>
+                <th class="jerarquia">Jerarquia</th>
+                <th class="descripcion">Descripción</th>
+                <th class="genero">Genero</th>
+                <th class="temporada">Temporada</th>
+                <th class="guardar">Guardar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let material of materiales_f; let i = index">
+                <td class="org">{{material.Mdm_Org}}</td>
+                <td class="tipo_mat">{{material.Mdm_Tipo_Material}}</td>
+                <td class="material">{{material.Mdm_Material}}</td>
+                <td class="jerarquia">{{material.Mdm_Jerarquia}}</td>
+                <td class="descripcion">{{material.Mdm_Descripcion}}</td>
+
+                <td>
+                  <select name="generos" [(ngModel)]="material.BD_Genero" class="custom-select" (change)="Cambio(i)">
+                    <option [value]="genero.BD_Genero" *ngFor="let genero of generos">{{genero.BD_Genero_L}}</option>
+                  </select>
+                </td>
+
+                <td>
+                    <select name="temporadas" [(ngModel)]="material.BD_Id_Temp" class="custom-select" (change)="Cambio(i)">
+                      <option [value]="temp.BD_Id_Temp" *ngFor="let temp of temporadas">{{temp.BD_Temporada}}{{temp.BD_Temporada_Anio}}</option>
+                    </select>
+                </td>
+
+                <!-- Guardar -->
+                <td class="guardar">
+                  <button [disabled]="!material.Status" class="primary" (click)="Guardar(i)"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="save"></mat-icon></button>
+                </td>
+
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

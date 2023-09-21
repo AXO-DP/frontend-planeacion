@@ -45,12 +45,20 @@ export class BackendService {
     return this.http.post(`${this.ruta}/usuario/marcas`, {org})
   }
 
-  jerarquias_aptos():Observable<any>{
-    return this.http.get(`${this.ruta}/jerarquias/aptos`)
+  jerarquias_aptos(org: any):Observable<any>{
+    return this.http.post(`${this.ruta}/jerarquias/aptos`, {org})
+  }
+
+  materiales(org: any):Observable<any>{
+    return this.http.post(`${this.ruta}/materiales`, {org})
   }
 
   jerarquia_aptos_cambios(jerarquia: any):Observable<any>{
     return this.http.post(`${this.ruta}/jerarquias/aptos/cambios`, jerarquia)
+  }
+
+  materiales_cambios(material: any):Observable<any>{
+    return this.http.post(`${this.ruta}/materiales/cambios`, material)
   }
 
 
