@@ -41,10 +41,7 @@ export class NavbarComponent {
       if(!existe_marca){
 
         this.marca = this.marcas[0].Organizacion
-				// console.log(this.marca);
-				
     		localStorage.setItem("marca_seleccionada", this.marca)
-				// console.log(this.marcas[0].Organizacion);
 					
 			}
     })

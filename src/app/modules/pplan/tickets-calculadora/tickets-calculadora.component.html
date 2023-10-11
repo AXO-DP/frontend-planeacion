@@ -1,0 +1,79 @@
+<div class="container">
+    <h1 class="titulo_1" [@fadeInOut]>PPLAN | Calculadoras</h1>
+    <div class="row">
+        <div class="card formulario">
+            <h1>Ingrese los datos:</h1>
+            <div>
+                <label for="">Marca</label>
+                <select name="marca" id="" [(ngModel)]="ticket.Marca"  class="custom-select">
+                    <option *ngFor="let marca of marcas">{{marca.Organizacion}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Cierre</label>
+                <select name="cierre" id="" [(ngModel)]="ticket.Cierre"  class="custom-select" (change)="cambioDeCierre()">
+                    <option *ngFor="let cierre of cierres" [value]="cierre.Nombre_Cierre">{{cierre.Nombre_Cierre}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Escenario</label>
+                <select name="escenario" id="" [(ngModel)]="ticket.Escenario" class="custom-select" (change)="cambioDeEscenario()">
+                    <option *ngFor="let esc of escenarios" [value]="esc.Nombre_Version">{{esc.Nombre_Version}}</option>
+                </select>
+            </div>
+            <button class="primary" (click)="agregarTicket()">
+                Agregar
+            </button>
+        </div>
+        <div class="card tickets">
+            <h1>Tickets</h1>
+            <table>
+                <thead>
+                    <tr>
+                      <th>Borrar</th>
+                      <th>Marca</th>
+                      <th>Cierre</th>
+                      <th>Escenario</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ticket_ of tickets; let i = index">
+                        <td class="guardar">
+                            <button class="secondary" (click)="borrarTicket(i)"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon></button>
+                        </td>
+                        <td>{{ticket_.Marca}}</td>
+                        <td>{{ticket_.Cierre}}</td>
+                        <td>{{ticket_.Escenario}}</td>
+                    </tr>
+                  </tbody>
+            </table>
+            <button class="primary" [disabled]="tickets.length == 0" (click)="ejecutarTickets()">Correr Tickets</button>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="card historial">
+            <h1>Historial</h1>
+            <table>
+                <thead>
+                    <tr>
+                      <th>Marca</th>
+                      <th>Cierre</th>
+                      <th>Escenario</th>
+                      <th>Usuario</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ticket_ of historial; let i = index">
+                        <td>{{ticket_.Org_Ticket}}</td>
+                        <td>{{ticket_.Nombre_Cierre}}</td>
+                        <td>{{ticket_.Nombre_Version}}</td>
+                        <td>{{ticket_.Id_Usuario_Creacion}}</td>
+                        <td>{{ticket_.Status_Ticket}}</td>
+                    </tr>
+                  </tbody>
+            </table>
+            <!-- <button class="primary" [disabled]="tickets.length == 0" (click)="ejecutarTickets()">Correr Tickets</button> -->
+        </div>
+    </div>
+</div>

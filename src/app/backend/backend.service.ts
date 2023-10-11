@@ -62,6 +62,20 @@ export class BackendService {
   }
 
 
+  escenarios_pplan():Observable<any>{
+    return this.http.get(`${this.ruta}/tickets/pplan/escenarios`)
+  }
+
+
+  guardar_tickets_pplan(material: any):Observable<any>{
+    return this.http.post(`${this.ruta}/tickets/pplan/guardar`, material)
+  }
+
+  imprimir_tickets_pplan():Observable<any>{
+    return this.http.get(`${this.ruta}/tickets/pplan/imprimir`)
+  }
+
+
 
 
   alta_organizacion(marca: any):Observable<any>{

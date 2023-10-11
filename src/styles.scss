@@ -107,7 +107,7 @@ button.secondary {
 }
 
 /* Cambiar el color del botón cuando está en hover (puntero encima) */
-button:hover {
+button.primary:hover {
   background-color: rgb(7, 33, 73);
 }
 
@@ -179,6 +179,13 @@ button:hover {
       -webkit-box-shadow: 0px 1px 5px 1px rgba(224,224,224,0.77);
       -moz-box-shadow: 0px 1px 5px 1px rgba(224,224,224,0.77);
       box-shadow: 0px 1px 5px 1px rgba(224,224,224,0.77);
+
+
+      h1{
+        color: #474747;
+        font-weight: 400;
+        font-size: x-large;
+      }
 
       hr{
           border-color: #f5f5f59c;

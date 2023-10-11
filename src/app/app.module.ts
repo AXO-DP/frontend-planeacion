@@ -26,6 +26,7 @@ import { MdmModule } from './modules/mdm/mdm.module';
 import { RelacionesModule } from './modules/relaciones/relaciones.module';
 import { InicioComponent } from './system/inicio/inicio.component';
 import { MaterialesComponent } from './modules/materiales/materiales.component';
+import { PplanModule } from './modules/pplan/pplan.module';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { MaterialesComponent } from './modules/materiales/materiales.component';
 
     MdmModule,
     RelacionesModule,
+    PplanModule,
 
     MatFormFieldModule,
     MatSelectModule

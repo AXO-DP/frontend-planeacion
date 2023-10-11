@@ -11,6 +11,7 @@ import { JerarquiasAptosComponent } from './modules/mdm/jerarquias-aptos/jerarqu
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './system/inicio/inicio.component';
 import { MaterialesComponent } from './modules/materiales/materiales.component';
+import { TicketsCalculadoraComponent } from './modules/pplan/tickets-calculadora/tickets-calculadora.component';
 
 const routes: Routes = [
   {path: "login",  component:LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
     {path: "jerarquias_aptos", component: JerarquiasAptosComponent},
     {path: "materiales", component: MaterialesComponent},
     {path: "categoria_demanda", component: CategoriaDemComponent},
+    {path: "calculadora-pplan", component: TicketsCalculadoraComponent}
   ]}, 
 
   // {path:"organizacion", component: OrganizacionComponent},

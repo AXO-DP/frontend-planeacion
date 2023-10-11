@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.formulario{
+    width: 30%;
+}
+
+.tickets{
+    width: 50%;
+}
+
+.historial{
+    margin-top: 30px;
+    width: 80%;
+}
+
+button.primary{
+    margin-top: 20px !important;
+    padding: 10px !important;
+}
